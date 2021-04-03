@@ -6,6 +6,80 @@
   padding: 0;
 }
 
+body {
+  margin-top: 10px;
+  background-color: aliceblue;
+}
+
 .App {
   text-align: center;
+}
+
+ul {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.toDo {
+  background-color: white;
+  box-shadow: 1px 1px 4px #888888;
+  width: 350px;
+  height: 30px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+input {
+  margin-top: 10px;
+  width: 200px;
+  font-size: 1em;
+}
+
+.add {
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.delete {
+  background-color: red;
+  border: none;
+  color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: absolute;
+  left: 10px;
+  cursor: pointer;
+}
+
+span {
+  cursor: pointer;
+}
+
+.pendingButton {
+  background-color: yellow;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+
+.doneButton {
+  background-color: green;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+
+.statusButton {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
 }
