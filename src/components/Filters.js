@@ -10,10 +10,16 @@ export default function Filters({ setFilter }) {
   }
 
   return (
-    <div>
-      <button onClick={handleAllFilterClick}>All</button>
-      <button onClick={handleDoneFilterClick}>Done</button>
-      <button onClick={handlePendingFilterClick}>Pending</button>
+    <div className="footer">
+      <button className="footerButton btn1" onClick={handleAllFilterClick}>
+        All
+      </button>
+      <button className="footerButton btn2" onClick={handleDoneFilterClick}>
+        Done
+      </button>
+      <button className="footerButton btn3" onClick={handlePendingFilterClick}>
+        Pending
+      </button>
     </div>
   );
 }

@@ -25,61 +25,180 @@ ul {
 .toDo {
   background-color: white;
   box-shadow: 1px 1px 4px #888888;
-  width: 350px;
-  height: 30px;
+  width: 380px;
+  height: 35px;
   margin: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  border-radius: 10px;
 }
 
 input {
   margin-top: 10px;
+  margin-bottom: 10px;
   width: 200px;
+  height: 30px;
   font-size: 1em;
+  border-radius: 10px;
+  border: 1px solid rgb(170, 170, 170);
+  margin-right: 5px;
+  box-shadow: 1px 1px 4px #888888;
 }
 
 .add {
   font-size: 1em;
   cursor: pointer;
+  width: 35px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(184, 222, 235);
+}
+
+.add:hover {
+  background-color: rgb(123, 173, 190);
 }
 
 .delete {
-  background-color: red;
+  background-color: rgb(219, 84, 84);
   border: none;
-  color: white;
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   border-radius: 10px;
   display: flex;
-  align-self: center;
   justify-content: center;
+  align-items: center;
   position: absolute;
-  left: 10px;
+  left: 8px;
   cursor: pointer;
+  font-size: 12px;
+  color: white;
+}
+.delete:hover {
+  background-color: rgb(168, 51, 51);
+}
+.edit {
+  background-color: rgb(85, 167, 153);
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 30px;
+  cursor: pointer;
+  font-size: 12px;
+  color: white;
+}
+
+.edit:hover {
+  background-color: rgb(61, 141, 128);
 }
 
 span {
-  cursor: pointer;
+  font-size: 20px;
 }
 
-.yellow {
-  background-color: yellow;
+.statusPending {
+  background-color: rgb(236, 236, 151);
+  color: rgb(107, 107, 27);
   position: absolute;
-  right: 10px;
+  right: 8px;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 8px;
 }
 
-.green {
-  background-color: green;
-  position: absolute;
-  right: 10px;
-  cursor: pointer;
+.statusPending:hover {
+  background-color: rgb(189, 189, 93);
 }
 
-.statusButton {
+.statusDone {
+  background-color: rgb(151, 235, 151);
+  color: darkgreen;
   position: absolute;
-  right: 10px;
+  right: 8px;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 8px;
+}
+
+.statusDone:hover {
+  background-color: rgb(111, 199, 111);
+}
+
+.footerButton {
+  font-size: 14px;
+  border-radius: 10px;
+  padding: 4px 7px;
+  margin: 10px 3px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px #888888;
+}
+
+.btn1 {
+  background-color: rgb(161, 213, 245);
+}
+.btn1:focus {
+  border: rgb(17, 52, 73) 3px solid;
+  padding: 1px 4px;
+}
+.btn1:hover {
+  background-color: rgb(91, 148, 184);
+}
+
+.btn2 {
+  background-color: rgb(151, 235, 151);
+}
+.btn2:focus {
+  border: rgb(24, 82, 24) 3px solid;
+  padding: 1px 4px;
+}
+.btn2:hover {
+  background-color: rgb(79, 170, 79);
+}
+
+.btn3 {
+  background-color: rgb(236, 236, 151);
+}
+.btn3:focus {
+  border: rgb(87, 87, 25) 3px solid;
+  padding: 1px 4px;
+}
+.btn3:hover {
+  background-color: rgb(184, 184, 97);
+}
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: aliceblue;
+}
+
+.main {
+  overflow-y: scroll;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+  background-color: aliceblue;
+  line-height: 20px;
+}
+
+h1 {
+  margin-top: 20px;
 }

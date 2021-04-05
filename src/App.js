@@ -33,7 +33,7 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>ToDo List</h1>
+      <h1>TODO-LIST</h1>
       <Content />
       <Filters setFilter={setFilter} filter={filter} />
     </div>
@@ -69,9 +69,11 @@ function App() {
   }
 
   function handleEdit(toDoName) {
-    const value = prompt("Edit yout ToDo");
+    const value = prompt("Edit your todo", toDoName);
     const changeToDoName = toDos.map((toDo) => {
-      if (toDoName === toDo.todo) {
+      if (toDoName === toDo.todo && !value) {
+        toDo.todo = toDoName;
+      } else if (toDoName === toDo.todo) {
         toDo.todo = value;
       }
       return toDo;
@@ -81,21 +83,22 @@ function App() {
 
   function Content() {
     return (
-      <div>
-        <header>
+      <div className="content">
+        <header className="header">
           <form onSubmit={handleSubmit}>
             <input
               type="text"
               name="toDoName"
-              placeholder="Type a task"
+              placeholder=" Type a todo"
+              maxLength="14"
               required
             ></input>
             <button className="add" type="submit">
-              Add
+              <i className="fas fa-plus"></i>
             </button>
           </form>
         </header>
-        <main>
+        <main className="main">
           <ul>{renderToDos()}</ul>
         </main>
       </div>
@@ -112,11 +115,14 @@ function App() {
     return (
       <li className="toDo">
         <button className="delete" onClick={() => onClickToDoRemove(name)}>
-          x
+          <i className="far fa-trash-alt"></i>
         </button>
-        <span onClick={() => onClickEdit(name)}>{name}</span>
+        <button className="edit" onClick={() => onClickEdit(name)}>
+          <i className="fas fa-pencil-alt"></i>
+        </button>
+        <span>{name.toUpperCase()}</span>
         <button
-          className={status === "Pending" ? "yellow" : "green"}
+          className={status === "Pending" ? "statusPending" : "statusDone"}
           onClick={() => onClickPendingToggle(name)}
         >
           {status}
