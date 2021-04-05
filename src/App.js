@@ -4,9 +4,20 @@ import Filters from "./components/Filters";
 
 function App() {
   const [toDos, setToDos] = useState([]);
+  const [filter, setFilter] = useState("");
+
+  let filterToDos;
+
+  if (filter === "Done") {
+    filterToDos = toDos.filter((toDoName) => toDoName.status === "Done");
+  } else if (filter === "Pending") {
+    filterToDos = toDos.filter((toDoName) => toDoName.status === "Pending");
+  } else {
+    filterToDos = toDos;
+  }
 
   function renderToDos() {
-    const allToDos = toDos.map((toDoName) => {
+    const allToDos = filterToDos.map((toDoName) => {
       return (
         <ToDo
           name={toDoName.todo}
@@ -24,7 +35,7 @@ function App() {
     <div className="App">
       <h1>ToDo List</h1>
       <Content />
-      <Filters />
+      <Filters setFilter={setFilter} filter={filter} />
     </div>
   );
 
@@ -105,7 +116,7 @@ function App() {
         </button>
         <span onClick={() => onClickEdit(name)}>{name}</span>
         <button
-          className="statusButton"
+          className={status === "Pending" ? "yellow" : "green"}
           onClick={() => onClickPendingToggle(name)}
         >
           {status}

@@ -1,9 +1,19 @@
-export default function Filters() {
+export default function Filters({ setFilter }) {
+  function handleAllFilterClick() {
+    setFilter("");
+  }
+  function handleDoneFilterClick() {
+    setFilter("Done");
+  }
+  function handlePendingFilterClick() {
+    setFilter("Pending");
+  }
+
   return (
     <div>
-      <button>All</button>
-      <button>Done</button>
-      <button>Pending</button>
+      <button onClick={handleAllFilterClick}>All</button>
+      <button onClick={handleDoneFilterClick}>Done</button>
+      <button onClick={handlePendingFilterClick}>Pending</button>
     </div>
   );
 }

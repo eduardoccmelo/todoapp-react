@@ -64,14 +64,14 @@ span {
   cursor: pointer;
 }
 
-.pendingButton {
+.yellow {
   background-color: yellow;
   position: absolute;
   right: 10px;
   cursor: pointer;
 }
 
-.doneButton {
+.green {
   background-color: green;
   position: absolute;
   right: 10px;
