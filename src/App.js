@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import Filters from "./components/Filters";
+import ToDo from "./components/Todo";
 
 function App() {
   const [toDos, setToDos] = useState([]);
@@ -102,32 +103,6 @@ function App() {
           <ul>{renderToDos()}</ul>
         </main>
       </div>
-    );
-  }
-
-  function ToDo({
-    name,
-    status,
-    onClickEdit,
-    onClickToDoRemove,
-    onClickPendingToggle,
-  }) {
-    return (
-      <li className="toDo">
-        <button className="delete" onClick={() => onClickToDoRemove(name)}>
-          <i className="far fa-trash-alt"></i>
-        </button>
-        <button className="edit" onClick={() => onClickEdit(name)}>
-          <i className="fas fa-pencil-alt"></i>
-        </button>
-        <span>{name.toUpperCase()}</span>
-        <button
-          className={status === "Pending" ? "statusPending" : "statusDone"}
-          onClick={() => onClickPendingToggle(name)}
-        >
-          {status}
-        </button>
-      </li>
     );
   }
 }
