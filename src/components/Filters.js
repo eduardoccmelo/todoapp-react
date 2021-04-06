@@ -1,4 +1,4 @@
-export default function Filters({ setFilter }) {
+export default function Filters({ setFilter, setToDos }) {
   function handleAllFilterClick() {
     setFilter("");
   }
@@ -7,6 +7,14 @@ export default function Filters({ setFilter }) {
   }
   function handlePendingFilterClick() {
     setFilter("Pending");
+  }
+  function handleClearList() {
+    const confirmation = window.confirm(
+      "Do you really want to delete your TODO-LIST?"
+    );
+    if (confirmation === true) {
+      setToDos([]);
+    }
   }
 
   return (
@@ -19,6 +27,9 @@ export default function Filters({ setFilter }) {
       </button>
       <button className="footerButton btn3" onClick={handlePendingFilterClick}>
         Pending
+      </button>
+      <button className="footerButton btn4" onClick={handleClearList}>
+        Delete All
       </button>
     </div>
   );

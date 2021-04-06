@@ -175,6 +175,9 @@ span {
 .btn3:hover {
   background-color: rgb(184, 184, 97);
 }
+.btn4 {
+  background-color: rgb(233, 144, 144);
+}
 
 .header {
   position: -webkit-sticky;

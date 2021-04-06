@@ -36,7 +36,7 @@ function App() {
     <div className="App">
       <h1>TODO-LIST</h1>
       <Content />
-      <Filters setFilter={setFilter} filter={filter} />
+      <Filters setToDos={setToDos} setFilter={setFilter} filter={filter} />
     </div>
   );
 
